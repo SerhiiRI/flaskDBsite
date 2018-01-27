@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>My Movie List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script>function go() {
+        window.location.href = "mml.html";
+    }</script>
+</head>
+<body>
+<h1>- My Movies List -</h1>
+
+    <div class="gridOne">
+        <h3>Filmoteka</h3>
+    <a href="mml.html">Cofnij</a>
+        <table>
+        <tr>
+               <th>Tytuł</th>
+               <th>Kategoria</th>
+            </tr>
+            <tr>
+            <form method="post">
+                <td><input name="film" pattern="{3}" placeholder="Tytul"></td>
+                <td><input name="kat" pattern="{3}" placeholder="Kategoria"></td>
+                <td>
+                        <input type="hidden" name="action" value="add">
+                        <input type="submit" value="Dodaj" name="add" class="btn-add">
+            </form>
+                </td>
+            </tr>
+
+            <tr>
+               <th>Tytuł</th>
+               <th>Kategoria</th>
+            </tr>
+		{% for item in lista %}
+            <tr>
+            <form method="post">
+                <td><input name="film" pattern="{3}" value="{{ item[1] }}"></td>
+                <td><input name="kat" pattern="{3}" value="{{ item[2] }}"></td>
+                <td>
+                        <input type="hidden" name="idOfMovie" value="{{ item[0] }}">
+                        <input type="hidden" name="action" value="edit">
+                        <input type="submit" value="Edytuj" name="edit" class="btn-add">
+
+            </form>
+                    <form method="post">
+                        <input type="hidden" name="action" value="del">
+                        <input type="hidden" name="idOfMovie" value="{{ item[0] }}">
+                        <input type="submit" value="Usun" name="del" class="btn-add">
+                    </form>
+                </td>
+            </tr>
+		{% endfor %}
+        </table>
+    </div>
+	<p style="color: white;">{{ error }}</p>
+</body>
+</html>

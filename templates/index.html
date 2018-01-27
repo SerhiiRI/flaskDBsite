@@ -1,0 +1,45 @@
+<!-- _______________
+< Ale Ale Aleks >
+ ---------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+-->
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>My Movie List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script>function go() {
+        window.location.href = "rej.html";
+    }</script>
+</head>
+<body>
+<h1>- My Movies List -</h1>
+<div class="bg">
+<div class="divlogin">
+    <form name="logowanie" method="post">
+        <label>Login: </label>
+        <input type="text" placeholder="Login" name="username" value="{{request.form.username}}"/>
+        <br/>
+        <br/>
+        <br/>
+        <label>Hasło: </label>
+        <input type="password" placeholder="Hasło" name="password" value="{{request.form.password}}"/>
+        <br/>
+        <br/>
+        <hr>
+        <input type="submit" value="Zaloguj się!" class="btn">
+	<br/>
+	<br/>
+        <input type="button" value="Zarejestruj!" class="btn" onclick="go()">
+	<br/>
+	<p style="color: white;">{{ error }}</p>
+    </form>
+</div>
+</div>
+</body>
+</html>

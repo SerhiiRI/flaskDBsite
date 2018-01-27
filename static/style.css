@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700|Supermercado+One&subset=latin-ext');
+body{
+    background-image: url("/static/bg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10vh;
+    text-align: center;
+    font-size: 1.5rem;
+    /*font-family: 'Supermercado One', cursive;*/
+    /*font-family: 'Raleway', sans-serif;*/
+    /*font-family: 'Poiret One', cursive;*/
+    font-family: 'Economica', sans-serif;
+}
+.bg{
+    background-image: url("/static/bg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.divlogin{
+    border: 1px solid black;
+    background-color: rgba(0,0,0,0.3);
+    width: 40vw;
+    height: 40vh;
+    margin: auto;
+    text-align: center;
+    padding: 8vh;
+    box-shadow: 2px 2px 20px black;
+}
+h1, h3{
+    color: white;
+    text-shadow: 2px 2px 20px black, -2px -2px 20px black;
+}
+form > input, .btn{
+    font-family: 'Economica', sans-serif;
+    border-radius: 5px;
+    width: 15vw;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 30px black;
+    color: white;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 0;
+}
+.btn{
+    height: 2.5rem;
+    box-shadow: 2px 2px 30px black;
+    color: white;
+    background-color: rgba(0,0,0, 0.5);
+    padding: 0;
+}
+label{
+    position: absolute;
+    margin-top: -2rem;
+    font-family: 'Supermercado One', cursive;
+    color: white;
+}
+
+/*---------mml.html---------------*/
+
+.img{
+    position: absolute;
+    left: 8vw;
+    top: 14vh;
+    font-size: 1.5rem;
+}
+.imgsrc{
+    width: 30%;
+    transition: box-shadow 200ms;
+}
+.imgsrc:hover{
+    box-shadow: 2px 2px 30px black;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    transition: text-shadow 200ms;
+}
+a:hover{
+    text-shadow: 2px 2px 30px black;
+}
+.gridMaster{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+ .gridOne, .gridTwo{
+     border: 1px solid black;
+     box-shadow: 2px 2px 30px black;
+     min-height: 40vh;
+     padding: 2vw;
+     margin: 1vh 1vw;
+ }
+ table{
+     background-color: rgba(0,0,0,0.6);
+     border-radius: 5px;
+     color: white;
+ }
+td, th, .btn-add{
+     border-bottom: 1px solid white;
+     padding: 10px;
+     min-width: 10vw;
+     height: 5vh;
+     margin: auto;
+     text-align: center;
+ }
+ .btn-add, .btn-edit, .sln{
+     color: white;
+     background-color: rgba(0,0,0, 0.5);
+     padding: 0;
+     width: 10vw;
+ }
+ .fld-edit{
+     width: 5vw;
+ }
+ .sln{
+     padding: 0.5rem;
+     border-radius: 0.5rem;
+     font-size: 1.1rem;
+ }

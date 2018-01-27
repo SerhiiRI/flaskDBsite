@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>My Movie List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script>
+        function profile() {
+            window.location.href="prof.html";
+        }
+    </script>
+</head>
+<body>
+
+
+<h1><form class="img"><img src="/static/du.png" class="imgsrc" onclick="profile()"/> {{wai}} || <a href="index.html">Wyloguj</a></form>- My Movies List -</h1>
+<div class="gridMaster">
+
+    <!------------------------------------Filmy w filmotece-->
+    <div class="gridOne">
+        <h3>Filmoteka</h3>
+        <a href="mov.html">Edytuj</a>
+        <table>
+            <tr>
+               <th>Tytuł</th>
+               <th>Kategoria</th>
+            </tr>
+		{% for item in lista %}
+            <tr>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[2] }}</td>
+                <td>
+                    <form method="post">
+                        <input type="hidden" name="idOfMovie" value="{{ item[0] }}">
+                        <input type="hidden" name="action" value="add">
+                        <input type="submit" value="Dodaj" name="dodaj" class="btn-add">
+                    </form>
+                </td>
+            </tr>
+		{% endfor %}
+        </table>
+    </div>
+
+    <!------------------------------------Filmy na liście-->
+    <div class="gridTwo">
+        <h3>Moja filmowa lista</h3>
+        <table>
+            <tr>
+                <th>Tytuł</th>
+                <th>Plany</th>
+                <th>Ocena</th>
+            </tr>
+		{% for item in mylist %}
+            <tr>
+		<form method="post">
+                <td>{{ item[3] }}<input type="hidden" name="film" value="{{item[2]}}"></td>
+                <td>
+                    <select name="plan" class="sln">
+		{% if item[4] == 0 %}
+                        <option {{ "selected" }} value="0">W planach</option>
+			<option value="1">Obejrzane</option>
+			{% else %}                        
+			<option value="0">W planach</option>
+			<option {{ "selected" }} value="1">Obejrzane</option>
+		{% endif %}
+                    </select>
+                </td>
+                <td><input type="number" name="score" value="{{item[5]}}" min="0" max="5" class="fld-edit"></td>
+                <td>
+        <input type="hidden" name="action" value="editmy">
+		<input type="hidden" name="onListId" value="{{item[0]}}">
+		<input type="submit" name="edit" value="Edytuj" class="btn-edit"><br/>
+		</form>
+                <form method="post">
+        <input type="hidden" name="action" value="del">
+        <input type="hidden" name="idDel" value="{{ item[0] }}">
+        <input type="hidden" name="idMov" value="{{ item[2] }}">
+		<input type="submit" name="del" value="Usuń" class="btn-edit">
+		</form>
+		</td>
+            </tr>
+		</form>
+		{% endfor %}
+        </table>
+    </div>
+</div>
+<p>{{error}}</p>
+</body>
+</html>

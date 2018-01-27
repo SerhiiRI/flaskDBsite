@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>My Movie List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script>
+        function cofnij() {
+            window.location.href = "mml.html";
+        }
+    </script>
+</head>
+<body>
+<h1>- My Movies List -</h1>
+<div class="divlogin">
+    <form name="chpass" method="post">
+        <label>Hasło: </label>
+        <input type="hidden" name="action" value="chpass">
+        <input type="password" pattern="[A-Za-z]{3}" placeholder="Hasło" name="chpass"  value="{{request.form.chpass}}"/>
+        <br/>
+        <hr>
+        <input type="submit" value="Zmień hasło" class="btn">
+        <br/>
+    </form>
+        <hr>
+    <form method="post">
+        <input type="hidden" name="action" value="chdata">
+        <input type="text" placeholder="Imie" pattern="{3}" name="chname"  value="{{chedycja[2]}}"/>
+        <br/>
+        <input type="text" placeholder="Nazwisko" pattern="{3}" name="chnazw"  value="{{chedycja[3]}}"/>
+        <br/>
+        <input type="email" placeholder="e-mail" pattern="{3}" name="chmail"  value="{{chedycja[4]}}"/>
+        <br/>
+        <input type="submit" value="Edytuj dane" class="btn">
+        <br/>
+    </form>
+        <hr>
+        <input type="button" value="Usuń konto" class="btn">
+        <br/>
+        <hr>
+        <br/>
+        <input type="button" value="Cofnij" class="btn" onclick="cofnij()">
+	<p style="color: white;">{{error}}</p>
+    </form>
+</div>
+</body>
+</html>

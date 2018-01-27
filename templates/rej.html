@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>My Movie List</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script>function go() {
+        window.location.href = "index.html";
+    }</script>
+</head>
+<body>
+<h1>- My Movies List -</h1>
+<div class="bg">
+<div class="divlogin">
+    <form name="rejestr" method="post">
+        <label>Login: </label>
+        <input type="text" placeholder="Login" pattern="{3}" name="login" value="{{request.form.login}}"/>
+        <label>Hasło: </label>
+        <input type="password" pattern="{3}"placeholder="Hasło" name="pass" value="{{request.form.pass}}"/>
+        <br/>
+        <br/>
+        <br/>
+        <label>Imię: </label>
+        <input type="text" placeholder="Imię" pattern="{3}" name="imie" value="{{request.form.imie}}"/>
+        <label>Nazwisko: </label>
+        <input type="text" placeholder="Nazwisko" pattern="{3}" name="nazw" value="{{request.form.nazw}}"/>
+        <br/>
+        <br/>
+        <br/>
+        <label>E-mail: </label>
+        <input type="email" placeholder="e-mail" pattern="{3}" name="email" value="{{request.form.email}}"/>
+        <br/>
+        <br/>
+        <hr>
+        <input type="submit" value="Zarejestruj" class="btn">
+	<br/>
+	<br/>
+        <input type="button" value="Wróć do logowania" class="btn" onclick="go()">
+	<br/>
+	<p style="color: white;">{{ error }}</p>
+    </form>
+</div>
+</div>
+</body>
+</html>
